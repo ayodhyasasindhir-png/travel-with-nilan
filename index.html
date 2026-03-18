@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel With Nilan</title>
+    <title>Travel With Nilan - Rates</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; background: #f9f9f9; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; background: #f4f4f4; }
         header { 
             background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('header-bg.jpg');
             background-size: cover; background-position: center;
@@ -13,16 +13,24 @@
         }
         nav { background: #333; color: white; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 1000; }
         nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        
         .hero { text-align: center; padding: 40px 20px; background: white; }
-        .main-van-img { max-width: 80%; height: auto; border-radius: 12px; margin: 20px auto; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
-        .btn { background: #25D366; color: white; padding: 15px 35px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; transition: 0.3s; margin-top: 10px; }
-        .btn:hover { background: #128C7E; transform: translateY(-3px); }
-        section { padding: 60px 20px; max-width: 1100px; margin: auto; text-align: center; }
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 20px 0; }
-        .gallery img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; transition: 0.3s; }
-        .gallery img:hover { transform: scale(1.03); }
+        .main-van-img { max-width: 80%; height: auto; border-radius: 12px; margin: 20px auto; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        
+        /* Pricing Table Styles */
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.05); }
+        .pricing-table th { background: #1f5f3f; color: white; padding: 15px; text-align: left; }
+        .pricing-table td { padding: 15px; border-bottom: 1px solid #eee; text-align: left; font-weight: bold; }
+        .pricing-table tr:hover { background: #f9f9f9; }
+
+        .booking-container { background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 0 20px rgba(0,0,0,0.1); margin: 20px auto; max-width: 500px; text-align: left; }
+        .btn { background: #25D366; color: white; padding: 15px; border-radius: 8px; font-weight: bold; display: block; width: 100%; text-align: center; border: none; cursor: pointer; font-size: 18px; transition: 0.3s; }
+        .btn:hover { background: #128C7E; }
+
+        section { padding: 50px 20px; max-width: 1100px; margin: auto; text-align: center; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .gallery img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; }
         footer { background: #222; color: #ccc; padding: 40px; text-align: center; }
-        h2 { color: #1f5f3f; margin-bottom: 20px; }
     </style>
 </head>
 <body>
@@ -34,58 +42,63 @@
 
 <nav>
     <a href="#">Home</a>
-    <a href="#about">About</a>
+    <a href="#prices">Prices</a>
     <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
 </nav>
 
 <section class="hero">
     <h1>Explore Sri Lanka with Comfort</h1>
-    <p>Safe & Reliable Van Service for Your Journey</p>
-    <img src="main-van.jpg" alt="Our Van Service" class="main-van-img">
-    <br>
-   <section id="booking" style="background: white; padding: 40px 20px; border-radius: 15px; box-shadow: 0 0 20px rgba(0,0,0,0.1); margin: 20px auto; max-width: 600px;">
-    <h2 style="color: #1f5f3f;">Book Your Trip</h2>
-    <form id="whatsappForm" style="text-align: left;">
-        <label>ඔබේ නම (Your Name):</label><br>
-        <input type="text" id="name" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;" required><br>
-        
-        <label>ගමනාන්තය (Destination):</label><br>
-        <input type="text" id="destination" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;" required><br>
-        
-        <label>දිනය (Date):</label><br>
-        <input type="date" id="date" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;" required><br>
-        
-        <button type="button" onclick="sendWhatsApp()" class="btn" style="width: 100%; border: none; cursor: pointer;">Send via WhatsApp</button>
-    </form>
+    <img src="main-van.jpg" alt="Our Van" class="main-van-img">
+</section>
 
-<script>
-function sendWhatsApp() {
-    var name = document.getElementById('name').value;
-    var dest = document.getElementById('destination').value;
-    var date = document.getElementById('date').value;
-    var phone = "94776051414"; // ඔබේ අංකය
+<section id="prices">
+    <h2>අපගේ මිල ගණන් (Our Rates)</h2>
+    <table class="pricing-table">
+        <thead>
+            <tr>
+                <th>සේවාව (Service Type)</th>
+                <th>මිල (Rate)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>කිලෝමීටරයකට මිල (Per KM Rate)</td>
+                <td style="color: #d32f2f;">LKR 115.00</td>
+            </tr>
+            <tr>
+                <td>Airport Pickup / Drop</td>
+                <td>Contact for best rates</td>
+            </tr>
+            <tr>
+                <td>Wedding Hire</td>
+                <td>Special Packages Available</td>
+            </tr>
+            <tr>
+                <td>Day Tours / Trips</td>
+                <td>Negotiable</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
 
-    var message = "New Booking Request:%0A" + 
-                  "Name: " + name + "%0A" + 
-                  "Destination: " + dest + "%0A" + 
-                  "Date: " + date;
-
-    window.open("https://wa.me/" + phone + "?text=" + message, '_blank');
-}
-</script> </section>
-
-<section id="about">
-    <h2>Our Services</h2>
-    <p>We provide comfortable van tours, wedding hires, airport pickup and drops, and round trips across beautiful Sri Lanka with experienced drivers.</p>
+<section class="booking-container">
+    <h2>Book Your Trip</h2>
+    <label>Name:</label>
+    <input type="text" id="name" style="width:100%; padding:12px; margin:8px 0; border-radius:8px; border:1px solid #ccc; box-sizing: border-box;">
+    <label>Destination:</label>
+    <input type="text" id="destination" style="width:100%; padding:12px; margin:8px 0; border-radius:8px; border:1px solid #ccc; box-sizing: border-box;">
+    <label>Date:</label>
+    <input type="date" id="date" style="width:100%; padding:12px; margin:8px 0; border-radius:8px; border:1px solid #ccc; box-sizing: border-box;">
+    <button type="button" onclick="sendWhatsApp()" class="btn">Send Request via WhatsApp</button>
 </section>
 
 <section id="gallery">
-    <h2>Our Gallery</h2>
+    <h2>Gallery</h2>
     <div class="gallery">
-        <img src="car1.jpg" alt="Gallery Photo 1">
-        <img src="car2.jpg" alt="Gallery Photo 2">
-        <img src="car3.jpg" alt="Gallery Photo 3">
+        <img src="car1.jpg" alt="Van 1">
+        <img src="car2.jpg" alt="Van 2">
+        <img src="car3.jpg" alt="Van 3">
     </div>
 </section>
 
@@ -93,6 +106,26 @@ function sendWhatsApp() {
     <p>&copy; 2026 Travel With Nilan. All Rights Reserved.</p>
     <p>Contact: +94 77 605 1414</p>
 </footer>
+
+<script>
+function sendWhatsApp() {
+    var name = document.getElementById('name').value;
+    var dest = document.getElementById('destination').value;
+    var date = document.getElementById('date').value;
+    var phone = "94776051414"; 
+
+    if(name == "" || dest == "" || date == ""){
+        alert("කරුණාකර සියලු විස්තර පුරවන්න.");
+        return;
+    }
+
+    var message = "*Booking Request*%0A%0A" + 
+                  "*Name:* " + name + "%0A" + 
+                  "*To:* " + dest + "%0A" + 
+                  "*Date:* " + date;
+    window.open("https://wa.me/" + phone + "?text=" + message, '_blank');
+}
+</script>
 
 </body>
 </html>
