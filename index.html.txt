@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel With Nilan</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0fdf4;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+  background: linear-gradient(90deg, #2e8b57, #3cb371);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  animation: fadeIn 2s;
+}
+
+nav {
+  background: #1f5f3f;
+  text-align: center;
+  padding: 15px;
+  sticky: top;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  animation: slideUp 1.5s;
+}
+
+/* Sections */
+section {
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.gallery img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Buttons */
+.btn {
+  background: #25D366;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #128C7E;
+  transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+  background: #1f5f3f;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes slideUp {
+  from {transform: translateY(50px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Travel With Nilan</h1>
+  <p>🚐 Reliable Van Hire Service | Sri Lanka</p>
+</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#about">About</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+  <h1>Explore Sri Lanka with Comfort</h1>
+  <p>Safe & Reliable Van Service for Your Journey</p>
+  <a href="https://wa.me/yournumber" class="btn">Book Now via WhatsApp</a>
+</section>
+
+<section id="about">
+  <h2>Our Services</h2>
+  <p>We provide comfortable van tours, airport drops, and round trips across beautiful Sri Lanka with experienced drivers.</p>
+</section>
+
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1527435046342-1e9624856b46" alt="Sri Lanka 1">
+    <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a" alt="Sri Lanka 2">
+    <img src="
